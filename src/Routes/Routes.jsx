@@ -5,6 +5,7 @@ import Blogs from "../Blogs/Blogs";
 import Login from "../Login/Login";
 import User from "../User/User";
 import Recipe from "../Blogs/Recipe/Recipe";
+import Contact from "../Contact/Contact";
 
 const router = createBrowserRouter([
             {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
                 {
                     path : ':id',
                     element : <Recipe></Recipe>,
+                },
+                {
+                    path : "/contact",
+                    element : <Contact></Contact>
                 }
             ]
         }
