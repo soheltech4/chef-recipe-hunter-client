@@ -27,8 +27,6 @@ const Recipe = () => {
                         <Card.Text className='fw-semibold'>Total numbers of recipes : {num_of_recipes}</Card.Text>
                         <div className='d-flex justify-content-between align-items-center' >
                             <Card.Text><FaThumbsUp className='text-warning'/> <span className='tex-warning fw-semibold'>{likes}</span></Card.Text>
-                            <FaHeart className='text-danger text-center'/>
-
                         </div>
                     </Card.Body>
                 </Card>

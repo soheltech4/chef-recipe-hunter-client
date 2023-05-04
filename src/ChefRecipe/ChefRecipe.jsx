@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card } from 'react-bootstrap';
-import { FaArrowRight, FaStar, FaStarHalf } from 'react-icons/fa';
+import { FaArrowRight, FaHeart, FaStar, FaStarHalf } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const ChefRecipe = ({ recipes }) => {
+    const [isLiked, setIsLiked] = useState(false);
+
+    const handleLike = () => {
+        if (!isLiked) {
+            setIsLiked(true);
+            toast.success('Added to favorites!');
+        }
+    };
+
     return (
         <div className=''>
             <div className='container'>
@@ -19,6 +29,7 @@ const ChefRecipe = ({ recipes }) => {
                         </div>
                         <div className='d-flex justify-content-between align-middle'>
                             <Card.Text className='fw-semibold'> <span className='text-warning'><FaStar /><FaStar /><FaStar /><FaStar /><FaStarHalf /></span> {recipes.rating}</Card.Text>
+                            <button className='rounded' onClick={handleLike} disabled={isLiked}><FaHeart className='text-danger text-center' /></button>
                         </div>
                     </Card.Body>
                 </Card>
