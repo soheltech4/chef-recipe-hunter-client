@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import ChefRecipe from '../../ChefRecipe/ChefRecipe';
+import { FaHeart, FaRegThumbsUp, FaThumbsUp, FaThumbtack } from 'react-icons/fa';
 
 const Recipe = () => {
     const { id } = useParams()
@@ -18,15 +19,17 @@ const Recipe = () => {
     return (
         <div className='d-flex container gap-5 mt-5 ps-4'>
             <div>
-                <Card className='' style={{ width: '25rem' }}>
-                    <Card.Img className='w-full' variant="top" src={picture_url} />
+                <Card className='border border-2 border-primary' style={{ width: '25rem' }}>
+                    <Card.Img className='w-full ' variant="top" src={picture_url} />
                     <Card.Body>
                         <Card.Title>{chef_name}</Card.Title>
                         <Card.Text>{bio}</Card.Text>
-                        <Card.Text>{years_of_experience} years of experience</Card.Text>
-                        <Card.Text>Total numbers of recipes : {num_of_recipes}</Card.Text>
+                        <Card.Text className='fw-semibold'>{years_of_experience} years of experience</Card.Text>
+                        <Card.Text className='fw-semibold'>Total numbers of recipes : {num_of_recipes}</Card.Text>
                         <div className='d-flex justify-content-between align-items-center' >
-                            <Card.Text>Total Likes : {likes}</Card.Text>
+                            <Card.Text><FaThumbsUp className='text-primary'/> <span className='tex-primary fw-semibold'>{likes}</span></Card.Text>
+                            <FaHeart className='text-danger text-center'/>
+
                         </div>
                     </Card.Body>
                 </Card>

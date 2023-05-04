@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
-import { FaArrowRight } from 'react-icons/fa';
+import { FaArrowRight, FaThumbsUp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Chefs = ({chef}) => {
@@ -11,10 +11,10 @@ const Chefs = ({chef}) => {
                 <Card.Img className='w-full' variant="top" src={picture_url}/>
                 <Card.Body>
                     <Card.Title>{chef_name}</Card.Title>
-                    <Card.Text>{years_of_experience} years of experience</Card.Text>
-                    <Card.Text>Total numbers of recipes : {num_of_recipes}</Card.Text>
+                    <Card.Text className='fw-semibold'>{years_of_experience} years of experience</Card.Text>
+                    <Card.Text className='fw-semibold'>Total numbers of recipes : {num_of_recipes}</Card.Text>
                     <div className='d-flex justify-content-between align-items-center' >
-                    <Card.Text>Total Likes : {likes}</Card.Text>
+                    <Card.Text className='fw-semibold'><FaThumbsUp className='text-primary'/> {likes}</Card.Text>
                     <Link to={`/${id}`}><Button variant="primary"> View Recipe <FaArrowRight></FaArrowRight> </Button></Link>
                     </div>
                 </Card.Body>
