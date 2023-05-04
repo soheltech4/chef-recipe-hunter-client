@@ -19,7 +19,7 @@ const Recipe = () => {
     return (
         <div className='d-flex container gap-5 mt-5 ps-4'>
             <div>
-                <Card className='border border-2 border-primary' style={{ width: '25rem' }}>
+                <Card className='border border-2 border-warning' style={{ width: '25rem' }}>
                     <Card.Img className='w-full ' variant="top" src={picture_url} />
                     <Card.Body>
                         <Card.Title>{chef_name}</Card.Title>
@@ -27,14 +27,14 @@ const Recipe = () => {
                         <Card.Text className='fw-semibold'>{years_of_experience} years of experience</Card.Text>
                         <Card.Text className='fw-semibold'>Total numbers of recipes : {num_of_recipes}</Card.Text>
                         <div className='d-flex justify-content-between align-items-center' >
-                            <Card.Text><FaThumbsUp className='text-primary'/> <span className='tex-primary fw-semibold'>{likes}</span></Card.Text>
+                            <Card.Text><FaThumbsUp className='text-warning'/> <span className='tex-warning fw-semibold'>{likes}</span></Card.Text>
                             <FaHeart className='text-danger text-center'/>
 
                         </div>
                     </Card.Body>
                 </Card>
             </div>
-            <div>
+            <div className='mb-5'>
                 {
                     recipes?.map(r => <ChefRecipe recipes={r}></ChefRecipe>)
                 }
