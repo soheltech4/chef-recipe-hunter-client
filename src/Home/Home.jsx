@@ -14,8 +14,8 @@ const Home = () => {
             .catch(error => console.error(error))
     }, [])
     return (
-        <div className='container mx-auto justify-content-between mt-5'>
-            <div className='d-flex gap-5 p-4'>
+        <div className='container mx-auto mt-5'>
+            <div className='d-flex gap-5 p-4 justify-content-between align-items-center'>
                 <div className=''>
                     <h1 className='fw-bold'>Chef <span className='text-warning'>Food</span> Hunter</h1>
                     <p className=''>Welcome to our food website, where you can discover delicious recipes and cooking inspiration from around the world. Our team of experienced chefs and food enthusiasts are passionate about sharing their knowledge and love for food with our readers. From simple weeknight meals to impressive dinner party dishes, we've got you covered with a wide range of recipes to suit every taste and occasion!</p>
