@@ -6,6 +6,7 @@ import Login from "../Login/Login";
 import User from "../User/User";
 import Recipe from "../Blogs/Recipe/Recipe";
 import Contact from "../Contact/Contact";
+import Registration from "../Registration/Registration";
 
 const router = createBrowserRouter([
             {
@@ -21,10 +22,6 @@ const router = createBrowserRouter([
                     element : <Blogs></Blogs>
                 },
                 {
-                    path : '/user',
-                    element : <User></User>
-                },
-                {
                     path : '/login',
                     element : <Login></Login>
                 },
@@ -33,8 +30,12 @@ const router = createBrowserRouter([
                     element : <Recipe></Recipe>,
                 },
                 {
-                    path : "/contact",
+                    path : '/contact',
                     element : <Contact></Contact>
+                },
+                {
+                    path : '/registration',
+                    element : <Registration></Registration>
                 }
             ]
         }

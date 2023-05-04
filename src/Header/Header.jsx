@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { FaUserCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 const Header = () => {
+
     return (
         <div className='container mx-auto'>
             <Navbar className='rounded mt-2' bg="dark" variant="dark">
@@ -12,7 +13,7 @@ const Header = () => {
                         <div className="d-flex gap-5 me-auto tex-center text-decoration-none">
                             <Link className='text-decoration-none text-white' to="/">Home</Link>
                             <Link className='text-decoration-none text-white' to="/blogs">Blogs</Link>
-                            <Link className='text-decoration-none text-white' >About</Link>
+                            <Link className='text-decoration-none text-white'>About</Link>
                             <Link className='text-decoration-none text-white' to="/contact">Contact</Link>
                         </div>
                         <div>

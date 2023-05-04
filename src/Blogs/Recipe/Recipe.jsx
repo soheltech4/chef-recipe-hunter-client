@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import ChefRecipe from '../../ChefRecipe/ChefRecipe';
-import { FaHeart, FaRegThumbsUp, FaThumbsUp, FaThumbtack } from 'react-icons/fa';
+import { FaArrowRight, FaHeart, FaRegThumbsUp, FaThumbsUp, FaThumbtack } from 'react-icons/fa';
 
 const Recipe = () => {
     const { id } = useParams()
     const [item, setItem] = useState([])
-    const [recipe, setRecipe] = useState([])
     const { chef_name, bio, years_of_experience, num_of_recipes, recipes, picture_url, likes } = item
     useEffect(() => {
         fetch('http://localhost:5000/chef')
@@ -38,6 +37,7 @@ const Recipe = () => {
                 {
                     recipes?.map(r => <ChefRecipe recipes={r}></ChefRecipe>)
                 }
+                <button className='' type="button" class="btn btn-warning fw-semibold"><Link to="/" className='text-decoration-none text-black'>Go to Contact<FaArrowRight/></Link></button>
             </div>
         </div>
     );

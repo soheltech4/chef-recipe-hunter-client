@@ -3,7 +3,7 @@ import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <footer className="footer container mx-auto p-5 bg-black text-white">
+        <footer className="footer container mx-auto p-5 bg-black text-white m-5">
             <div className='gap-5 justify-content-between'>
                 <div className="">
                     <h3>Get in Touch</h3>
