@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, ToastHeader } from 'react-bootstrap';
 import { FaArrowRight, FaHeart, FaStar, FaStarHalf } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const ChefRecipe = ({ recipes }) => {
     const [isLiked, setIsLiked] = useState(false);
@@ -10,7 +12,7 @@ const ChefRecipe = ({ recipes }) => {
     const handleLike = () => {
         if (!isLiked) {
             setIsLiked(true);
-            toast.success('Added to favorites!');
+             toast.success('Your Favorite Recipe!');
         }
     };
 
@@ -32,6 +34,10 @@ const ChefRecipe = ({ recipes }) => {
                             <button className='rounded' onClick={handleLike} disabled={isLiked}><FaHeart className='text-danger text-center' /></button>
                         </div>
                     </Card.Body>
+                    <ToastContainer
+                        position="top-right"
+                        reverseOrder={false}
+                    />
                 </Card>
             </div>
         </div>

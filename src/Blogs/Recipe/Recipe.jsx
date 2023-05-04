@@ -35,7 +35,7 @@ const Recipe = () => {
                 {
                     recipes?.map(r => <ChefRecipe recipes={r}></ChefRecipe>)
                 }
-                <button className='' type="button" class="btn btn-warning fw-semibold"><Link to="/" className='text-decoration-none text-black'>Go to Contact<FaArrowRight/></Link></button>
+                <button className='' type="button" class="btn btn-warning fw-semibold"><Link to="/" className='text-decoration-none text-black'>Go to Home <FaArrowRight/></Link></button>
             </div>
         </div>
     );
