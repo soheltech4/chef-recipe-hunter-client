@@ -5,6 +5,7 @@ import { FaArrowAltCircleLeft, FaArrowCircleRight, FaArrowRight } from 'react-ic
 import Contact from '../Contact/Contact';
 import Footer from '../Footer/Footer';
 import { Spinner } from 'react-bootstrap';
+import LazyLoad from 'react-lazy-load';
 
 const Home = () => {
     const [chefs, setChef] = useState([])
@@ -37,7 +38,7 @@ const Home = () => {
                     <button type="button" className="btn btn-warning fw-semibold"><Link to="/" className='text-decoration-none text-black'>Top Recipes <FaArrowRight /></Link></button>
                 </div>
                 <div>
-                    <img src="https://i.ibb.co/71JmxSM/food-grass-fed-beef-foodservice-products-grass-run-farms-4.png" alt="" />
+                        <img src="https://i.ibb.co/71JmxSM/food-grass-fed-beef-foodservice-products-grass-run-farms-4.png" alt="" />
                 </div>
             </div>
             <h2 className='text-center mb-4 mt-5 bg-warning rounded'>Our Chef</h2>

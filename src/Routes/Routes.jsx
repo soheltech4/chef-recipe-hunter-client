@@ -3,11 +3,11 @@ import Main from "../Main/Main";
 import Home from "../Home/Home";
 import Blogs from "../Blogs/Blogs";
 import Login from "../Login/Login";
-import User from "../User/User";
-import Recipe from "../Blogs/Recipe/Recipe";
+import Recipe from "../../src/Recipe/Recipe";
 import Contact from "../Contact/Contact";
 import Registration from "../Registration/Registration";
 import ErrorPage from "../ErrorPage/ErrorPage";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
             {
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
                 },
                 {
                     path : ':id',
-                    element : <Recipe></Recipe>,
+                    element : <PrivateRoute><Recipe></Recipe></PrivateRoute>,
                 },
                 {
                     path : '/contact',
