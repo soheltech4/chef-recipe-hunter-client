@@ -33,14 +33,16 @@ const Home = () => {
 
     return (
         <div className='container mx-auto mt-5'>
-            <div className='d-flex gap-5 p-4 justify-content-between align-items-center'>
+            <div className='d-md-flex gap-5 p-4 justify-content-between align-items-center'>
                 <div className=''>
                     <h1 className='fw-bold'>Chef <span className='text-warning'>Food</span> Hunter</h1>
                     <p className=''>Welcome to our food website, where you can discover delicious recipes and cooking inspiration from around the world. Our team of experienced chefs and food enthusiasts are passionate about sharing their knowledge and love for food with our readers. From simple weeknight meals to impressive dinner party dishes, we've got you covered with a wide range of recipes to suit every taste and occasion!</p>
                     <button type="button" className="btn btn-warning fw-semibold"><Link to="/" className='text-decoration-none text-black'>Top Recipes <FaArrowRight /></Link></button>
                 </div>
                 <div>
+                    <LazyLoad>
                         <img src="https://i.ibb.co/71JmxSM/food-grass-fed-beef-foodservice-products-grass-run-farms-4.png" alt="" />
+                    </LazyLoad>
                 </div>
             </div>
             <h2 className='text-center mb-4 mt-5 bg-warning rounded'>Our Chef</h2>
