@@ -3,9 +3,16 @@ import { Form, Button } from "react-bootstrap";
 import { FaFacebookSquare, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
+import app from "../Firebase/firebase.config";
+import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 
+
+const auth = getAuth(app)
+const googleProvider = new GoogleAuthProvider()
+const githubProvider = new GithubAuthProvider()
 function LoginForm() {
-
+    const [error, setError] = useState()
     const { signIn } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
@@ -17,6 +24,7 @@ function LoginForm() {
         const email = form.email.value
         const password = form.password.value
         console.log(email, password)
+        setError("")
         signIn(email, password)
             .then(result => {
                 const loggedUser = result.user;
@@ -25,8 +33,35 @@ function LoginForm() {
             })
             .catch(error => {
                 console.log(error)
+                setError(error.message)
             })
     }
+
+    const handleGoogleSignIn = () => {
+        signInWithPopup(auth, googleProvider)
+        .then(result =>{
+            const loggedGoogleUser = result.user
+            console.log(loggedGoogleUser)
+            navigate(from, { replace: true })
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
+
+
+    const handleGithubSignIn = () => {
+        signInWithPopup(auth, githubProvider)
+        .then(result =>{
+            const loggedGithubUser = result.user
+            console.log(loggedGithubUser)
+            navigate(from, { replace: true })
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
+
 
 
     return (
@@ -47,13 +82,14 @@ function LoginForm() {
                     <div className="border border-2 border-warning rounded p-2">
                         <p className="text-center fw-semibold">Login with</p>
                         <div className="d-flex text-center justify-content-between">
-                            <button type="button" className="btn btn-outline-warning"><FaGoogle /> Google</button>
+                            <button onClick={handleGoogleSignIn} type="button" className="btn btn-outline-warning"><FaGoogle /> Google</button>
                             <button type="button" className="btn btn-outline-primary"> <FaFacebookSquare /> Facebook</button>
-                            <button type="button" className="btn btn-outline-secondary"> <FaGithub /> Github</button>
+                            <button onClick={handleGithubSignIn} type="button" className="btn btn-outline-secondary"> <FaGithub /> Github</button>
                         </div>
                     </div>
                     <p className="mt-3 text-center">If you have no Account Please<span> <Link to="/registration"> Registration </Link> </span></p>
                 </div>
+                <div className="container text-center text-danger fw-semibold"><p>{error}</p></div>
             </Form>
         </div>
     );

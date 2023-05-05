@@ -10,7 +10,7 @@ const Recipe = () => {
     const [item, setItem] = useState([])
     const { chef_name, bio, years_of_experience, num_of_recipes, recipes, picture_url, likes } = item
     useEffect(() => {
-        fetch('http://localhost:5000/chef')
+        fetch('https://chef-food-hunter-server-sohelranagtc.vercel.app/chef')
             .then(res => res.json())
             .then(data => { { data.chefs.find(i => { if (i.id == id) setItem(i) }) } })
             .catch(error => console.error(error))

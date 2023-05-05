@@ -12,10 +12,12 @@ const Home = () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        fetch('http://localhost:5000/chef')
+        fetch('https://chef-food-hunter-server-sohelranagtc.vercel.app/chef')
             .then(res => res.json())
             .then(data => {
                 setChef(data.chefs)
+                console.log(data.chefs)
+                
                 setLoading(false)
             })
             .catch(error => console.error(error))
