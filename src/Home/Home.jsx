@@ -46,7 +46,7 @@ const Home = () => {
                 </div>
             </div>
             <h2 className='text-center mb-4 mt-5 bg-warning rounded'>Our Chef</h2>
-            <div className='md:grid row row-cols-3 mx-auto'>
+            <div className='grid row row-cols-md-3 row-cols-1 mx-auto'>
                 {
                     chefs.map(chef => <Chefs key={chef.id} chef={chef}></Chefs>)
                 }
